@@ -20,4 +20,4 @@
 ## 📥 Instrucciones de Ejecución
 1. Clonar el repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/tu-repositorio.gi](https://github.com/tu-usuario/tu-repositorio.gi)
+   git clone https://github.com/bvasquezs/TurquiaApp.git
