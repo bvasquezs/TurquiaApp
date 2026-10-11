@@ -1,6 +1,6 @@
 # TurquiaApp
 
-# TurquiaApp - Traductor Turco/Español para Niños (Grupo X)
+# TurquiaApp - Traductor Turco/Español para Niños
 
 * [Bastain Vasquez]
 * [Sebastian Lillo]
