@@ -2,7 +2,7 @@
 
 # TurquiaApp - Traductor Turco/Español para Niños
 
-* [Bastain Vasquez]
+* [Bastian Vasquez]
 * [Sebastian Lillo]
 * [Ricardo Vargas]
   
