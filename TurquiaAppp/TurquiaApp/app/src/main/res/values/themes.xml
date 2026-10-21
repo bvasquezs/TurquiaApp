@@ -1,6 +1,0 @@
-<resources>
-    <style name="Theme.TurquiaApp" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">#00838F</item>
-        <item name="android:windowBackground">#F4FBFB</item>
-    </style>
-</resources>
