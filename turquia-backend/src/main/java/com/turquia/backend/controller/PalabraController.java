@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/palabras")
-@CrossOrigin(origins = "*") // Permite que Android se conecte sin bloqueos
+@CrossOrigin(origins = "*")
 public class PalabraController {
 
     @Autowired

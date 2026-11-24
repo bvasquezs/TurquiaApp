@@ -7,6 +7,5 @@ import java.util.List;
 
 @Repository
 public interface PalabraRepository extends JpaRepository<Palabra, Long> {
-    // Método extra por si quieres filtrar por categoría desde Android
     List<Palabra> findByCategoria(String categoria);
 }
