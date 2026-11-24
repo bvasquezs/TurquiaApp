@@ -1,0 +1,12 @@
+﻿# Android / Gradle
+**/build/
+**/.gradle/
+**/.idea/
+**/local.properties
+*.iml
+*.apk
+*.aab
+
+# Spring Boot / Maven
+**/target/
+*.log
