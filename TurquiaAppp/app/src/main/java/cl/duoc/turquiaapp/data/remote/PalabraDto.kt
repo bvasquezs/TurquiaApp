@@ -6,7 +6,8 @@ data class PalabraDto(
     val id: Long? = null,
     val espanol: String,
     val turco: String,
-    val categoria: String
+    val categoria: String,
+    val usuario: String? = null
 ) {
     fun toDomainWord(): Word {
         return Word(

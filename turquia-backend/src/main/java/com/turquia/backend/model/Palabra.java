@@ -16,18 +16,20 @@ public class Palabra {
     @Column(nullable = false)
     private String turco;
 
+    @Column(nullable = false)
     private String categoria;
 
-    // Constructores
+    private String usuario;
+
     public Palabra() {}
 
-    public Palabra(String espanol, String turco, String categoria) {
+    public Palabra(String espanol, String turco, String categoria, String usuario) {
         this.espanol = espanol;
         this.turco = turco;
         this.categoria = categoria;
+        this.usuario = usuario;
     }
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -39,4 +41,7 @@ public class Palabra {
 
     public String getCategoria() { return categoria; }
     public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public String getUsuario() { return usuario; }
+    public void setUsuario(String usuario) { this.usuario = usuario; }
 }
