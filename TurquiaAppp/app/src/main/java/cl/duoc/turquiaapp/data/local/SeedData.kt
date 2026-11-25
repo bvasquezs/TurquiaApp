@@ -3,7 +3,6 @@ package cl.duoc.turquiaapp.data.local
 import cl.duoc.turquiaapp.domain.model.Category
 import cl.duoc.turquiaapp.domain.model.Word
 
-/** Vocabulario inicial que se carga la primera vez que se abre la app. */
 object SeedData {
     private fun w(c: Category, tr: String, es: String, emoji: String) =
         Word(turkish = tr, spanish = es, category = c.name, emoji = emoji)

@@ -49,7 +49,6 @@ class TranslatorViewModel(wordRepository: WordRepository) : ViewModel() {
         input.value = FieldState()
     }
 
-    /** Coincidencias exactas primero, luego palabras que empiezan o contienen el texto. */
     private fun search(words: List<Word>, query: String, dir: Direction): List<Word> {
         val q = query.normalizeForSearch()
         if (q.isEmpty()) return emptyList()

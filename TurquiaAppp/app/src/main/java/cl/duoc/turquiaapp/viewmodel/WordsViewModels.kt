@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-/** Lista de palabras de una categoría; sin argumento "category" muestra los favoritos. */
 class WordsViewModel(
     savedStateHandle: SavedStateHandle,
     private val repository: WordRepository
@@ -23,7 +22,6 @@ class WordsViewModel(
 
     val category: Category? = Category.fromKey(savedStateHandle.get<String>("category"))
 
-    /** null = todavía cargando. */
     val words: StateFlow<List<Word>?> =
         (if (category != null) repository.observeByCategory(category) else repository.observeFavorites())
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)

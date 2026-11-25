@@ -6,13 +6,8 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
 
-/**
- * Recurso nativo: vibración. Usa el servicio del sistema Vibrator
- * (requiere el permiso VIBRATE en el AndroidManifest, que no se pide en tiempo de ejecución).
- */
 object VibrationSupport {
 
-    /** Hace vibrar el teléfono [milliseconds] ms. Si el equipo no tiene vibrador, no hace nada. */
     fun vibrate(context: Context, milliseconds: Long = 80L) {
         val vibrator = getVibrator(context)
         if (!vibrator.hasVibrator()) return

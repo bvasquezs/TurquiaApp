@@ -54,7 +54,6 @@ class ProfileViewModel(private val repository: UserRepository) : ViewModel() {
         _state.update { it.copy(childAge = FieldState(digits, Validators.childAge(digits)), savedMessage = null) }
     }
 
-    /** La foto se guarda de inmediato para no perderla si la app se cierra. */
     fun onPhotoTaken(path: String) {
         val s = _state.value
         _state.update { it.copy(photoPath = path) }

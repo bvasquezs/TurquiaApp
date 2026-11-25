@@ -6,7 +6,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    // Detecta solo si es el emulador del PC o un celular físico conectado por USB
     private val isEmulator: Boolean = (
             Build.FINGERPRINT.startsWith("generic") ||
                     Build.FINGERPRINT.startsWith("unknown") ||

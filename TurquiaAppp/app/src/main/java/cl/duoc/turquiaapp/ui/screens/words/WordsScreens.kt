@@ -72,7 +72,6 @@ import cl.duoc.turquiaapp.viewmodel.AppViewModelProvider
 import cl.duoc.turquiaapp.viewmodel.WordsViewModel
 import kotlinx.coroutines.launch
 
-/** Lista de palabras de una categoría. Sin categoría (viewModel.category == null) muestra los favoritos. */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun WordsScreen(
@@ -153,7 +152,6 @@ fun WordsScreen(
     }
 }
 
-/** Formulario para agregar una palabra propia al diccionario. */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun AddWordScreen(

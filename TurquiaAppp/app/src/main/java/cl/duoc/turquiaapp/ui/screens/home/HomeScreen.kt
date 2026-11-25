@@ -66,7 +66,6 @@ fun HomeScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = Modifier.fillMaxWidth()
     ) {
-        // Banner superior tipo tarjeta 3D turquesa Capadocia
         item(span = { GridItemSpan(maxLineSpan) }) {
             val primaryColor = MaterialTheme.colorScheme.primary
             val borderSombra = lerp(primaryColor, Color.Black, 0.25f)
@@ -105,7 +104,6 @@ fun HomeScreen(
             }
         }
 
-        // Botón del traductor estilo juguete amarillo estrella presionable
         item(span = { GridItemSpan(maxLineSpan) }) {
             val interaction = remember { MutableInteractionSource() }
             val pressed by interaction.collectIsPressedAsState()
@@ -168,7 +166,6 @@ fun HomeScreen(
     }
 }
 
-/** Tarjeta de categoría estilo juguete 3D: entra escalonada y se hunde al presionarla. */
 @Composable
 private fun CategoryCard(
     category: Category,
@@ -182,7 +179,6 @@ private fun CategoryCard(
     val pressed by interaction.collectIsPressedAsState()
     val pressScale by animateFloatAsState(if (pressed) 0.94f else 1f, tween(120), label = "pressScale")
 
-    // Calcula automáticamente un borde 3D más oscuro a partir del color pastel de cada categoría
     val bordeSombra = lerp(color, Color.Black, 0.22f)
 
     AnimatedVisibility(

@@ -11,7 +11,6 @@ import cl.duoc.turquiaapp.TurquiaApplication
 private fun CreationExtras.container() =
     (this[APPLICATION_KEY] as TurquiaApplication).container
 
-/** Fábrica única de ViewModels: inyecta los repositorios desde el AppContainer. */
 object AppViewModelProvider {
     val Factory = viewModelFactory {
         initializer { LoginViewModel(container().userRepository) }

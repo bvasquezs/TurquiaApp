@@ -2,12 +2,7 @@ package cl.duoc.turquiaapp.domain.validation
 
 import cl.duoc.turquiaapp.domain.model.Category
 
-/**
- * Reglas de validación de TODOS los formularios de la app.
- *
- * Es Kotlin puro (sin Android ni Compose): la UI solo muestra el mensaje que
- * devuelve cada función. Retornan `null` cuando el valor es válido.
- */
+
 object Validators {
 
     private val EMAIL_REGEX = Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")
@@ -40,7 +35,6 @@ object Validators {
         else -> null
     }
 
-    /** Para el login solo se exige que no esté vacía (la regla fuerte aplica al registrarse). */
     fun loginPassword(value: String): String? =
         if (value.isEmpty()) "Ingresa tu contraseña" else null
 
@@ -60,7 +54,6 @@ object Validators {
         }
     }
 
-    /** Palabra o frase corta (turco o español). Permite letras, espacios, guion y apóstrofe. */
     fun word(value: String, fieldName: String): String? {
         val v = value.trim()
         return when {
@@ -75,7 +68,6 @@ object Validators {
     fun category(value: Category?): String? =
         if (value == null) "Elige una categoría" else null
 
-    /** Texto del traductor: es opcional (vacío = sin búsqueda) pero si hay texto debe ser válido. */
     fun searchText(value: String): String? = when {
         value.isEmpty() -> null
         value.length > 40 -> "Máximo 40 caracteres"

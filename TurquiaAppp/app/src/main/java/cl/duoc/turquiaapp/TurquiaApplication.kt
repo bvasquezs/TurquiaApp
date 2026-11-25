@@ -14,7 +14,6 @@ class TurquiaApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         container = AppContainer(this)
-        // Carga el vocabulario inicial la primera vez que se abre la app.
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             container.wordRepository.seedIfEmpty()
         }

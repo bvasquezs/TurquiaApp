@@ -4,7 +4,6 @@ import java.security.MessageDigest
 import java.security.SecureRandom
 import java.util.Base64
 
-/** Las contraseñas se guardan con sal aleatoria + SHA-256, nunca en texto plano. */
 object PasswordHasher {
     fun newSalt(): String {
         val bytes = ByteArray(16)

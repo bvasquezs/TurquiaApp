@@ -17,7 +17,6 @@ class WordRepository(private val storage: LocalStorage) {
 
     private fun List<Word>.sortedByTurkish() = sortedBy { it.turkish.lowercase() }
 
-    /** Obtiene el nombre del perfil activo desde storage.users */
     private suspend fun getActiveProfileName(): String {
         val usuarios = storage.users.first()
         return usuarios.lastOrNull()?.name?.trim().orEmpty()
@@ -38,7 +37,6 @@ class WordRepository(private val storage: LocalStorage) {
         val actuales = storage.words.first()
         val perfilActivo = getActiveProfileName()
 
-        // 1. Siempre preparamos las palabras predeterminadas (IDs negativos para no chocar con MySQL)
         val predeterminadas = SeedData.words.mapIndexed { i, w ->
             val idBase = -(i + 1L)
             val existente = actuales.find { it.id == idBase }
@@ -49,7 +47,6 @@ class WordRepository(private val storage: LocalStorage) {
             )
         }
 
-        // 2. Traemos las palabras personalizadas desde Spring Boot / MySQL filtradas por perfil
         var personalizadas: List<Word> = actuales.filter { it.isCustom }
 
         try {
@@ -74,7 +71,6 @@ class WordRepository(private val storage: LocalStorage) {
             Log.e("TurquiaRetrofit", "Error conectando al backend: ${e.message}")
         }
 
-        // 3. Combinamos las predeterminadas + las personalizadas del perfil en MySQL
         storage.updateWords { predeterminadas + personalizadas }
     }
 

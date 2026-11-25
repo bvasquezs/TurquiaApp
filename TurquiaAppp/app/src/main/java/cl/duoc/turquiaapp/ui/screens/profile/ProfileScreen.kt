@@ -76,9 +76,6 @@ fun ProfileScreen(
         state.savedMessage?.let { snackbar.showSnackbar(it) }
     }
 
-    // --- Recurso nativo: cámara (permiso en tiempo de ejecución + FileProvider) ---
-    // La ruta pendiente se guarda con rememberSaveable por si Android recrea la actividad
-    // mientras la app de cámara está abierta.
     var pendingPath by rememberSaveable { mutableStateOf<String?>(null) }
 
     val takePicture = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { success ->

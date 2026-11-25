@@ -16,7 +16,6 @@ class HomeViewModel(userRepository: UserRepository, wordRepository: WordReposito
     val user: StateFlow<User?> = userRepository.observeCurrentUser()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
-    /** Cantidad de palabras por categoría para mostrar en cada tarjeta. */
     val counts: StateFlow<Map<Category, Int>> = wordRepository.observeAll()
         .map { words -> words.mapNotNull { Category.fromKey(it.category) }.groupingBy { it }.eachCount() }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyMap())

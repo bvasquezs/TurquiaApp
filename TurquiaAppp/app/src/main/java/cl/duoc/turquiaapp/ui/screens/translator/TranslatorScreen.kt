@@ -111,7 +111,6 @@ fun TranslatorScreen(
     }
 }
 
-/** Muestra "Turco ⇄ Español"; al cambiar la dirección el ícono gira. */
 @Composable
 private fun DirectionCard(direction: Direction, onSwap: () -> Unit) {
     val rotation by animateFloatAsState(

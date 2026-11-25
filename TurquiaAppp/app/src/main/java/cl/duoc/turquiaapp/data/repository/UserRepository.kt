@@ -32,7 +32,7 @@ class UserRepository(
         val salt = PasswordHasher.newSalt()
         var duplicated = false
         var newId = 0L
-        // La comprobación de correo repetido y el guardado ocurren en la misma operación atómica.
+
         storage.updateUsers { users ->
             if (users.any { it.email == normalizedEmail }) {
                 duplicated = true
@@ -58,7 +58,7 @@ class UserRepository(
     suspend fun login(email: String, password: String): AuthResult {
         val normalizedEmail = email.trim().lowercase()
         val user = storage.users.first().firstOrNull { it.email == normalizedEmail }
-        // Mismo mensaje para correo inexistente o clave incorrecta (no filtra qué correos existen).
+
         if (user == null || user.passwordHash != PasswordHasher.hash(password, user.salt)) {
             return AuthResult.Error("Correo o contraseña incorrectos")
         }

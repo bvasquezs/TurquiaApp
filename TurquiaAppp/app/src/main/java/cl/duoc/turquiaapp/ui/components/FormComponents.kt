@@ -57,13 +57,7 @@ import cl.duoc.turquiaapp.ui.theme.SuccessGreen
 import cl.duoc.turquiaapp.viewmodel.FieldState
 import kotlin.math.roundToInt
 
-/**
- * Campo de texto con retroalimentación visual:
- *  - borde y texto en rojo + ícono de error cuando [FieldState.error] != null
- *  - ícono ✓ verde cuando el valor es válido
- *  - mensaje de error animado debajo del campo
- * No contiene reglas de validación: solo muestra lo que decide el ViewModel.
- */
+
 @Composable
 fun ValidatedTextField(
     field: FieldState,
@@ -142,7 +136,6 @@ fun ValidatedTextField(
     )
 }
 
-/** Sacude el componente horizontalmente cada vez que [trigger] aumenta (intento de envío con errores). */
 fun Modifier.shake(trigger: Int): Modifier = composed {
     val offsetX = remember { Animatable(0f) }
     LaunchedEffect(trigger) {
@@ -157,7 +150,6 @@ fun Modifier.shake(trigger: Int): Modifier = composed {
     this.offset { IntOffset(offsetX.value.roundToInt(), 0) }
 }
 
-/** Banner de error general del formulario (por ejemplo "Correo o contraseña incorrectos"). */
 @Composable
 fun ErrorBanner(message: String?, modifier: Modifier = Modifier) {
     AnimatedVisibility(
@@ -184,7 +176,6 @@ fun ErrorBanner(message: String?, modifier: Modifier = Modifier) {
     }
 }
 
-/** Botón principal que muestra un indicador de progreso mientras se procesa la acción. */
 @Composable
 fun LoadingButton(
     text: String,
@@ -212,7 +203,6 @@ fun LoadingButton(
     }
 }
 
-/** Lleva al usuario a los ajustes de la app para que conceda un permiso denegado. */
 fun openAppSettings(context: Context) {
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
         data = Uri.fromParts("package", context.packageName, null)

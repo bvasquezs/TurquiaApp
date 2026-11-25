@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-/** Verde de éxito para los íconos ✓ de campos válidos. */
 val SuccessGreen = Color(0xFF06D6A0)
 
 private val LightColors = lightColorScheme(
@@ -81,7 +80,6 @@ fun TurquiaTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composabl
     )
 }
 
-/** Modificador reutilizable estilo botón/tarjeta 3D infantil (inspirado en Duolingo) */
 fun Modifier.tarjetaInfantil3D(
     colorFondo: Color,
     colorBordeSombra: Color,

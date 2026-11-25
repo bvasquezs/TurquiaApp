@@ -9,14 +9,9 @@ import android.net.Uri
 import androidx.core.content.FileProvider
 import java.io.File
 
-/**
- * Recurso nativo: cámara. La foto se guarda en el almacenamiento privado de la app
- * (filesDir/photos) y se comparte con la app de cámara mediante FileProvider,
- * sin exponer rutas del sistema de archivos.
- */
+
 object CameraSupport {
 
-    /** Crea el archivo de destino y la URI segura que se entrega a la cámara. */
     fun newPhotoTarget(context: Context, userId: Long): Pair<File, Uri> {
         val dir = File(context.filesDir, "photos").apply { mkdirs() }
         val file = File(dir, "child_${userId}_${System.currentTimeMillis()}.jpg")
@@ -24,7 +19,6 @@ object CameraSupport {
         return file to uri
     }
 
-    /** Decodifica la foto reducida (ahorra memoria) y corrige su orientación según EXIF. */
     fun loadBitmap(path: String, targetSize: Int = 512): Bitmap? {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         BitmapFactory.decodeFile(path, bounds)

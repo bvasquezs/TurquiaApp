@@ -24,10 +24,7 @@ import cl.duoc.turquiaapp.device.CameraSupport
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/**
- * Componente reutilizable (Guía 13): muestra la imagen en forma circular.
- * Si no hay imagen, muestra un ícono de perfil por defecto.
- */
+
 @Composable
 fun ImagenInteligente(
     photoPath: String?,

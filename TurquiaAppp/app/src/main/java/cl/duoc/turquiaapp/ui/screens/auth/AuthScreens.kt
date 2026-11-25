@@ -57,7 +57,6 @@ import cl.duoc.turquiaapp.viewmodel.AppViewModelProvider
 import cl.duoc.turquiaapp.viewmodel.LoginViewModel
 import cl.duoc.turquiaapp.viewmodel.RegisterViewModel
 
-/** Estructura común de login y registro: fondo degradado, logo animado y tarjeta con el formulario. */
 @Composable
 private fun AuthLayout(
     title: String,

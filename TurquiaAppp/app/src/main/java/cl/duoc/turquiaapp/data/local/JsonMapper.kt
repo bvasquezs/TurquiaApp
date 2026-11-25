@@ -5,7 +5,6 @@ import cl.duoc.turquiaapp.domain.model.Word
 import org.json.JSONArray
 import org.json.JSONObject
 
-/** Convierte los modelos a JSON (texto) y viceversa para guardarlos en DataStore. */
 object JsonMapper {
 
     fun usersToJson(users: List<User>): String {

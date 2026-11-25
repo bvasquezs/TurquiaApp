@@ -45,7 +45,6 @@ import androidx.compose.ui.unit.sp
 import cl.duoc.turquiaapp.domain.model.Word
 import cl.duoc.turquiaapp.device.VibrationSupport
 
-/** Botón de favorito con animación de "latido" cuando se activa o desactiva. */
 @Composable
 fun FavoriteButton(isFavorite: Boolean, onToggle: () -> Unit) {
     val context = LocalContext.current
@@ -63,7 +62,7 @@ fun FavoriteButton(isFavorite: Boolean, onToggle: () -> Unit) {
         label = "favoriteTint"
     )
     IconButton(onClick = {
-        VibrationSupport.vibrate(context) // Recurso nativo: vibración
+        VibrationSupport.vibrate(context)
         onToggle()
     }) {
         Icon(
@@ -75,7 +74,6 @@ fun FavoriteButton(isFavorite: Boolean, onToggle: () -> Unit) {
     }
 }
 
-/** Tarjeta de una palabra: emoji, turco, español, y botón de favorito. */
 @Composable
 fun WordCard(
     word: Word,
@@ -125,7 +123,6 @@ fun WordCard(
     }
 }
 
-/** Mensaje centrado para listas vacías. */
 @Composable
 fun EmptyState(emoji: String, title: String, subtitle: String, modifier: Modifier = Modifier) {
     Column(
